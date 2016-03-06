@@ -8,34 +8,13 @@
 
 %% stumpGenerator description
 %
-% This script is a simple hands on demonstration of the Adaptive Boosting
-% algorithm. It generates a training set and a testing set of examples.
-% Each of these sets is a point in the (x1, x2) space, and each has a
-% label of +1 or -1 (meaning that each point can only be classified one of
-% two ways). In other words, each of these sets is a set of points, and
-% each point has an assciated label of either +1 or -1 (yes or no, true or
-% false, spam or not spam, whichever makes more sense to the reader).
-%
-% Then, after generating the data sets, the script generates stumps or
-% 'weak' decision boundaries using the train data. Each stump generated is 
-% the best possible stump considering the weights assigned to the points
-% from the previous stump (the first stump is generated from an arbitrary
-% equal weight assigned to all data points).
-%
-% Next, the script combines the stumps according to the AdaBoost
-% algorithm formula to generate a classifier which is known to be an
-% extremely strong classifier.
-%
-% The strength of the classifier is all well and good when stated
-% verbally, but we would like some metric which tests the performance of
-% this classifier. So, the last step of thisscript tests the classifier on
-% both the training set and the testing set. Some numbers are generated,
-% comparing the performance on both datasets.
+% This function generates a new stump given some training data and the
+% existing weights matrix. The algorithm followed is described in the loop
+% below.
 
 
+%% Function definition
 function stump = stumpGenerator(dataX, dataY, Dt)
-%% Parameters 
-
 intervals = 100;
 % more intervals means better resolution
 

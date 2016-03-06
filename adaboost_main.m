@@ -28,7 +28,7 @@
 %
 % The strength of the classifier is all well and good when stated
 % verbally, but we would like some metric which tests the performance of
-% this classifier. So, the last step of thisscript tests the classifier on
+% this classifier. So, the last step of this script tests the classifier on
 % both the training set and the testing set. Some numbers are generated,
 % comparing the performance on both datasets.
 
@@ -502,5 +502,23 @@ disp(output2);
 
 
 % housekeeping: delete unused variables
-clear alphasum invariant i j output0 output1 output2;
+clear alphasum invariant tempclassifier i j output0 output1 output2 Dt horz vert horzpos horzneg vertpos vertneg positives negatives newStump;
+clear trainX trainY testX testY trainsize testsize;
 % clear all;
+
+
+% You may want to look at other generated but unused matrices to better
+% understand results, although most of the useful results have been plotted
+% here.
+%
+% Some insights: As the number of stumps are increased, the margin should
+% increase. Further, the weighted error on each stump should not exceed
+% 0.5, because that is the upper limit on the weighted error by virtue of
+% our choice of weights update rule. Next, the training and testing errors
+% must both go down as more stumps are used.
+%
+% The plots try to demonstrate those key points. This is a general
+% algorithm showing the implementation of AdaBoost. It can be used on any
+% classifier that you may want, for example, the Naive Bayes classifier.
+% Hopefully, this script was insightful in term of demonstrating the
+% principles of AdaBoost.
