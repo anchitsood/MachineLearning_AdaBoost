@@ -1,9 +1,9 @@
 # AdaBoost algorithm
 
-Author: Anchit Sood
-Callsign: ElessarTelcontar
-License: GNU GPLv3
-Platform: Matlab
+Author: Anchit Sood;
+Callsign: ElessarTelcontar;
+License: GNU GPLv3;
+Platform: Matlab;
 
 
 -> adaboost_main.m description:
